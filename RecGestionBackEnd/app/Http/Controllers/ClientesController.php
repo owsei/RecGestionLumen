@@ -4,9 +4,9 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Database\Eloquent\Model;
-use App\Models\Usuarios;
+use App\Models\Clientes;
 
-class UsuariosController extends Controller
+class ClientesController extends Controller
 {
     /**
      * Create a new controller instance.
@@ -18,13 +18,11 @@ class UsuariosController extends Controller
         //
     }
 
-    
-    public function doLogin(Request $request)
-    {
-        $nombre = $_GET['NO'];
-        $contraseña = $_GET['PS'];
-        $model= new Usuarios();
-        $returnData = $model-> doLogin($nombre,$contraseña);
+    public function getAllClientes(){
+      
+        $model= new Clientes();
+        $returnData = $model-> getAllClientes();
         return $returnData;
+
     }
 }

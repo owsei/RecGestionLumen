@@ -24,4 +24,7 @@ $router->group(['prefix' => '/'], function() use($router){
     // $router->get('registrant/{id}', 'RegistrantController@show');
     // $router->put('registrant/{id}', 'RegistrantController@update');
     // $router->delete('registrant/{id}', 'RegistrantController@destroy');
+
+    //CLIENTES
+    $router->get('getAllClientes', 'ClientesController@getAllClientes');
   });

@@ -9,7 +9,7 @@ class Usuarios extends Model
     function doLogin($nombre,$contraseña){
 
         $DB= new UtilsDB();
-        $sql="SELECT count(*) as existe FROM pruebas.usuarios where nombre ='$nombre'";
+        $sql="SELECT count(*) as existe FROM pruebas.usuarios where nombre ='$nombre' and password = '$contraseña'";
         $results=$DB->select($sql);
         
         // $results = app('db')->select("SELECT count(*) as existe FROM pruebas.usuarios where nombre ='$nombre'");
@@ -19,9 +19,9 @@ class Usuarios extends Model
         // }
         $dato=0;
         $array_num = count($results);
-        for ($i = 0; $i < $array_num; ++$i){
-            $dato=$results[$i]->existe;
-        }
-        return  $dato;
+        // for ($i = 0; $i < $array_num; ++$i){
+        //     $dato=$results[$i]->existe;
+        // }
+        return  $results;
     }
 }
